@@ -12,32 +12,22 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 `
-
 export const Container = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(#121212, #212b46);
+  background: #121212;
   overflow: hidden;
 `
 
 export const Title = styled.h1`
   font-size: min(9vw, 85px);
-  color: white;
-  animation: flip 2s;
+  color: #bf80ff;
+  box-shadow: 1px 1px 15px #a64dff;
+  padding: 1%;
 
-
-@keyframes flip {
- from{
-  transform: rotateX(90deg);
- }
- to{
-  transform: rotateX(0deg);
- } 
- 
-}
 `
 export const SectionInput = styled.div`
  background: rgba(255,255,255,0.2);
@@ -45,24 +35,27 @@ export const SectionInput = styled.div`
  display: flex;
  justify-content: space-between;
  border-radius: 8px;
- box-shadow: 1px 3px 8px rgba(0,0,0,0.5);
  margin: 34px 0;
- border: 1px solid yellow;
  width: 70%;
  max-width: 300px;
  position: relative;
-
+ border: 2px solid #a64dff;	
+ transition: all 0.5s;
+ 
+ &:hover  {
+   box-shadow: 1px 1px 15px #a64dff;
+  }
+  
  input{
   background: transparent;
-
   border: 0;
   font-size: 20px;
   outline: 0;
-  color: #FFF;
+  color: #a64dff;	
 
  }
  input::placeholder{
-  color:#f1f1f1;	
+  color: #a64dff;	
 }
 
 `
@@ -81,17 +74,18 @@ right: 4px;
 `
 export const Main = styled.main`
 display: flex;
-justify-content: center;
-align-items: center;
 flex-direction: column;
-background: #FFF;
+background: rgba(255,255,255,0.8);
 width: 80%;
 max-width: 500px;
 border-radius: 8px;
+color: #330066;
+padding: 2%;
 
   h2{
     font-size: min(7vw, 60px);
     margin: 16px 0;
+    text-align: center;
   }
 
   span{

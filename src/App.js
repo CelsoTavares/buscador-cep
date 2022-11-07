@@ -23,7 +23,7 @@ function App() {
     try{
       const response = await Api.get(`${input}/json`)
       setCep(response.data)
-      console.log(response.data.cep)
+      console.log(response.data)
       setInput('')
     }
     catch{
@@ -45,7 +45,7 @@ function App() {
           placeholder="Digite seu cep..."/>
 
           <ButtonSearch onClick={handleClick}>
-             <FiSearch size={25} color="white"/>
+             <FiSearch size={25} color="#a64dff"/>
           </ButtonSearch>
         </SectionInput>
 
@@ -54,9 +54,9 @@ function App() {
             <h2>CEP:{cep.cep}</h2>
 
               <span>{cep.logradouro}</span>
-              <span>Complemento: {cep.complemento}</span>
-              <span>{cep.bairro}</span>
-              <span>{cep.localidade}</span>
+              <span>UF: {cep.uf}</span>
+              <span>Bairro: {cep.bairro} </span>
+              <span>Cidade: {cep.localidade}</span>
 
           </Main>
             
