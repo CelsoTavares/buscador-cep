@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
-
 export const GlobalStyle = createGlobalStyle`
 
 *{
@@ -10,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   font-size: sans-serif;
 }
-
 `
 export const Container = styled.div`
   height: 100vh;
@@ -18,16 +16,15 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #121212;
+  background-image: ${props => props.theme.backgroundImage};
   overflow: hidden;
 `
 
 export const Title = styled.h1`
   font-size: min(9vw, 85px);
-  color: #bf80ff;
+  color: ${props => props.theme.color};
   box-shadow: 1px 1px 15px #a64dff;
   padding: 1%;
-
 `
 export const SectionInput = styled.div`
  background: rgba(255,255,255,0.2);
@@ -51,15 +48,13 @@ export const SectionInput = styled.div`
   border: 0;
   font-size: 20px;
   outline: 0;
-  color: #a64dff;	
-
+  color: ${props => props.theme.color};	
+  font-weight: bold;
  }
  input::placeholder{
-  color: #a64dff;	
+  color: ${props => props.theme.color};
 }
-
 `
-
 export const ButtonSearch = styled.button`
 border: 0;
 background: transparent;
@@ -79,7 +74,7 @@ background: rgba(255,255,255,0.8);
 width: 80%;
 max-width: 500px;
 border-radius: 8px;
-color: #330066;
+color: ${props => props.theme.color};	
 padding: 2%;
 
   h2{
@@ -93,4 +88,12 @@ padding: 2%;
     margin-bottom: 16px;
     font-weight: bold;
   }
+`
+export const Theme = styled.div`
+margin-bottom: 50px;
+padding: 2px;
+gap: 5px;
+background: #d9b3ff;
+cursor:pointer;
+border-radius: 5px;
 `

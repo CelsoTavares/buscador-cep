@@ -1,14 +1,19 @@
 import React from "react";
-import { GlobalStyle, ButtonSearch, Container, Title, SectionInput, Main } from "./styledGlobal";
-import { FiSearch } from "react-icons/fi" 
+import { ButtonSearch, Container, Title, SectionInput, Main, Theme } from "./styledGlobal";
+import { ThemeProvider } from "styled-components"
+import { FiSun, FiSearch } from "react-icons/fi" 
+import { MdOutlineDarkMode } from "react-icons/md";
 import { useState } from "react";
-import Api from "./services/api"
+import Api from "./services/Api"
+import Dark from "./theme/Dark";
+import Light from "./theme/Light";
 
 
 function App() {
   
   const [input, setInput] = useState('')
   const [cep, setCep] = useState({})
+  const [color, setColor] = useState(Light)
 
   function change(e) {
     setInput(e.target.value)
@@ -23,7 +28,6 @@ function App() {
     try{
       const response = await Api.get(`${input}/json`)
       setCep(response.data)
-      console.log(response.data)
       setInput('')
     }
     catch{
@@ -31,13 +35,28 @@ function App() {
       setInput('')
     }
   }
+  function lightOn() {
+    setColor(Light)
+  }
+  function darkOn() {
+    setColor(Dark)
+  }
+
 
   return (
-    <Container>
-      <GlobalStyle />
-      
+    
+    <ThemeProvider theme={color} >
+      <Container>
+          <Theme>
+              <FiSun size={25} color="#ffff00" 
+              onClick={lightOn}/>
+              <MdOutlineDarkMode size={25} color="#3333cc" 
+              onClick={darkOn}/>
+          </Theme>
       <Title>Buscador CEP</Title>
-        
+          
+  
+
         <SectionInput>
           <input onChange={change} 
           type="text" 
@@ -59,9 +78,10 @@ function App() {
               <span>Cidade: {cep.localidade}</span>
 
           </Main>
-            
           )}
-    </Container>
+      </Container>
+    </ThemeProvider>   
+   
   );
 }
 
