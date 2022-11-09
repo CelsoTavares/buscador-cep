@@ -19,6 +19,12 @@ function App() {
     setInput(e.target.value)
   }
   
+  function capture(e) {
+   if(e.key === "Enter"){
+   handleClick()
+   }
+  }
+  
   async function handleClick() {
    
     if( input === '' ) {
@@ -58,7 +64,8 @@ function App() {
   
 
         <SectionInput>
-          <input onChange={change} 
+          <input onChange={change}
+          onKeyDown={capture}
           type="text" 
           value={input}
           placeholder="Digite seu cep..."/>
