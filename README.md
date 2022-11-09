@@ -25,7 +25,7 @@ Enter your zip code in the field, click on the icon and see the result.
 
 ### Links
 
-- Live Site URL: [Live site](https://buscador-d6itwkiqm-celsotavares.vercel.app/)
+- Live Site URL: [Live site](https://buscador-cep-pi.vercel.app/)
 
 ### Built with
 
