@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-
 *{
   margin: 0;
   padding: 0;
@@ -19,7 +18,6 @@ export const Container = styled.div`
   background-image: ${props => props.theme.backgroundImage};
   overflow: hidden;
 `
-
 export const Title = styled.h1`
   font-size: min(9vw, 85px);
   color: ${props => props.theme.color};
