@@ -30,23 +30,26 @@ function App() {
       alert("Preencha algum cep!")
       return;
     }
+    
     try{
       const response = await Api.get(`${input}/json`)
       setCep(response.data)
       setInput('')
     }
+    
     catch{
       alert('Erro ao buscar!')
       setInput('')
     }
   }
+  
   function lightOn() {
     setColor(Light)
   }
+  
   function darkOn() {
     setColor(Dark)
   }
-
 
   return (
     
