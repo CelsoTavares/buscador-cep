@@ -8,7 +8,6 @@ import Api from "./services/Api"
 import Dark from "./theme/Dark";
 import Light from "./theme/Light";
 
-
 function App() {
   
   const [input, setInput] = useState('')
@@ -61,8 +60,6 @@ function App() {
           </Theme>
       <Title>Buscador CEP</Title>
           
-  
-
         <SectionInput>
           <input onChange={change}
           onKeyDown={capture}
